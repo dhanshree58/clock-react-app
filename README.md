@@ -61,7 +61,11 @@ Clone the repository
 ```bash
 https://github.com/dhanshree58/clock-react-app.git
 ```
+Navigate to the project directory
 
+```bash
+cd clock-dashboard
+```
 Install dependencies
 
 ```bash
