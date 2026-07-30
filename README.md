@@ -59,13 +59,7 @@ Make sure you have installed:
 Clone the repository
 
 ```bash
-git clone https://github.com/your-username/clock-dashboard.git
-```
-
-Navigate to the project directory
-
-```bash
-cd clock-dashboard
+https://github.com/dhanshree58/clock-react-app.git
 ```
 
 Install dependencies
