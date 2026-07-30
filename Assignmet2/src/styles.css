@@ -1,0 +1,238 @@
+:root {
+  color-scheme: dark;
+  color: #f5f6fa;
+  background: #10131a;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #212731 0%, #0f1218 55%, #090b10 100%);
+}
+
+.app-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+  margin: 0;
+  color: #b9c2d9;
+}
+
+.controls {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.control-group {
+  background: rgba(26, 32, 45, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+label {
+  color: #dce2f5;
+  font-weight: 600;
+}
+
+select,
+input[type='time'] {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f6fa;
+  padding: 0.95rem 1rem;
+  font-size: 1rem;
+}
+
+/* Make native select dropdowns match the dark theme */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Dropdown list and options */
+select option,
+select optgroup {
+  background: #0f1218;
+  color: #f5f6fa;
+}
+
+/* Remove default IE/Edge arrow for a cleaner look */
+select::-ms-expand {
+  display: none;
+}
+
+/* Focus state */
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(93, 115, 255, 0.08);
+}
+
+.toggle-row {
+  align-items: center;
+  grid-template-columns: auto auto;
+}
+
+.toggle-row label {
+  margin-right: 0.5rem;
+}
+
+.button {
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  background: #5d73ff;
+  padding: 0.95rem 1rem;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  background: #7c8dff;
+}
+
+.clock-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.clock-card {
+  background: rgba(19, 25, 38, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.analog-clock {
+  display: grid;
+  place-items: center;
+}
+
+.dial {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.04) 0%, transparent 55%);
+  box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.03), 0 13px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.dial::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 20px 20px;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: bottom center;
+  border-radius: 999px;
+}
+
+.hand.hour {
+  width: 12px;
+  height: 80px;
+  background: #f7f8ff;
+}
+
+.hand.minute {
+  width: 10px;
+  height: 110px;
+  background: #bdd2ff;
+}
+
+.hand.second {
+  width: 4px;
+  height: 125px;
+  background: #ff7a7a;
+}
+
+.digital-clock {
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+}
+
+.digital-clock .time {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.digital-clock .period {
+  color: #a2a8c7;
+  font-size: 1.25rem;
+}
+
+.clock-note,
+.alarm-panel {
+  color: #b8bfd5;
+  margin-top: 0.75rem;
+}
+
+.alarm-panel {
+  background: rgba(26, 32, 47, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.alarm-message {
+  border-left: 4px solid #ff7a7a;
+  padding-left: 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .dial {
+    width: 220px;
+    height: 220px;
+  }
+}
